@@ -121,7 +121,7 @@ def encode_ability(ability_label,n):
 def get_data_set(ability_labels,cc_labels,damage_labels,batch_size):
   path_draft='/content/draftData.csv'
   path_ability='/content/abilities_reduced_compressed.csv'
-  path_hero='/content/hero.txt'
+  #path_hero='/content/hero.txt'
   drafts=pd.read_csv(path_draft).values.tolist()
   X=[]
   Y=[]
