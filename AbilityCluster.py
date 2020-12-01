@@ -23,3 +23,14 @@ def mean_shift(data_set):
 def kmean(data_set,n,rs):
     return KMeans(n_clusters=n, random_state=rs).fit_predict(data_set)
     
+def get_center_ability(X,Y,index,centers):
+    center=centers[index]
+    distlist=[]
+    center_list=[]
+
+    for i in range(len(X)):
+        if Y[i]==index:
+            distlist.append(np.linalg.norm(np.array(X[i]) - np.array(center)))
+            center_list.append(X[i])
+    center_index=distlist.index(max(distlist))
+    return center_list[center_index],center_index
